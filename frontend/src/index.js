@@ -8,6 +8,9 @@ import {
 } from 'react-router-dom';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import LandingPage from './screens/LandingPage';

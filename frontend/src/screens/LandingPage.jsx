@@ -1,52 +1,120 @@
 import React from 'react';
+import { Container, Row, Col, Button, } from 'react-bootstrap';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination } from 'swiper/modules';
+import { GiHerbsBundle, GiMartini } from 'react-icons/gi';
+import { BsRecycle } from 'react-icons/bs';
+import { FaHandsHelping } from 'react-icons/fa';
 import './LandingPage.css';
+
 
 const LandingPage = () => {
   return (
     <div className="landing-page">
-      <header className="header">
-        <div className="logo">
-          <h1>Polenia Ginger Beer</h1>
+      <section className="hero d-flex align-items-center text-center">
+        <Container>
+          <Row className="justify-content-center">
+            <Col md={10} lg={8}>
+              <h1 className="display-4 fw-bold">Refresh Your Senses</h1>
+              <p className="lead">Polenia Ginger Beer – Crafted from agroecological ginger, packed with natural flavor.</p>
+              <Button variant="success" size="lg" className="mt-3 cta-btn">Know More</Button>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+      
+
+      <section className="cta-uno-section">
+  <div className="cta-uno-content">
+    <h2 className="mb-4">Join the Polenia Community</h2>
+    <p className="lead">Subscribe to our newsletter for exclusive offers and updates.</p>
+    <div className='text-end mt-3'>
+
+      <Button variant="primary" size="lg" className="cta-btn">Subscribe Now</Button>
+    </div>
+  </div>
+</section>
+
+<section className="image-buttons-section">
+  <div className="image-buttons-container">
+    <div className="image-button" onClick={() => console.log("Clicked 1")}>
+      <img src="/images/ginger1.JPG" alt="Option 1" />
+      <div className="overlay">Option 1</div>
+    </div>
+    <div className="image-button" onClick={() => console.log("Clicked 2")}>
+      <img src="/images/ginger1.JPG" alt="Option 2" />
+      <div className="overlay">Option 2</div>
+    </div>
+    <div className="image-button" onClick={() => console.log("Clicked 3")}>
+      <img src="/images/ginger1.jpg" alt="Option 3" />
+      <div className="overlay">Option 3</div>
+    </div>
+  </div>
+</section>
+
+
+      <section id="about" className="about py-5 bg-light text-center">
+        <Container>
+          <h2 className="mb-4">About Polenia</h2>
+          <p className="lead">Handcrafted with organic ginger and bottled sustainably, Polenia is more than a beverage – it's a commitment to flavor, health, and the planet.</p>
+        </Container>
+      </section>
+
+      <section id="features" className="features py-5 text-center">
+  <Container>
+    <h2 className="mb-4">Why Choose Polenia?</h2>
+    <Row className="gy-4">
+      <Col md={6} lg={3}>
+        <div className="feature-box">
+          <GiHerbsBundle className="feature-icon" />
+          <h5>100% Natural</h5>
+          <p>No additives. Just pure fermented flavor.</p>
         </div>
-        <nav>
-          <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-      </header>
-
-      <section className="hero">
-        <div className="hero-text">
-          <h2>Refresh Your Senses with Polenia Ginger Beer</h2>
-          <p>Crafted from eco-friendly ginger, packed with natural flavor.</p>
-          <button className="cta-btn">Order Now</button>
+      </Col>
+      <Col md={6} lg={3}>
+        <div className="feature-box">
+          <BsRecycle className="feature-icon" />
+          <h5>Eco-Friendly</h5>
+          <p>We reuse glass bottles and avoid plastic waste.</p>
         </div>
-      </section>
+      </Col>
+      <Col md={6} lg={3}>
+        <div className="feature-box">
+          <FaHandsHelping className="feature-icon" />
+          <h5>Local & Ethical</h5>
+          <p>We source ginger from small agroecological farms.</p>
+        </div>
+      </Col>
+      <Col md={6} lg={3}>
+        <div className="feature-box">
+          <GiMartini className="feature-icon" />
+          <h5>Versatile</h5>
+          <p>Delicious on its own, or as the star in your cocktail.</p>
+        </div>
+      </Col>
+    </Row>
+  </Container>
+</section>
 
-      <section id="about" className="about">
-        <h2>About Polenia</h2>
-        <p>Polenia Ginger Beer is a handcrafted beverage, made with organic ginger, bringing a refreshing taste to your life. We are committed to sustainability and support local farmers.</p>
-      </section>
+<section className="logo-carousel py-5">
+  <h2 className="text-center mb-4">Our Partners</h2>
+  <p className="text-center mb-4">We are proud to collaborate with local businesses and organizations.</p>
+      <Swiper
+        modules={[Autoplay, Pagination]} // Use the imported modules here
+        spaceBetween={50}
+        slidesPerView={5}
+        autoplay={{ delay: 2500, disableOnInteraction: false }}
+        pagination={{ clickable: true }}
+      >
+        <SwiperSlide><img className='logo-image' src="/images/panconmadrelogo.png" alt="Logo 1" /></SwiperSlide>
+        <SwiperSlide><img className='logo-image' src="/images/panconmadrelogo.png" alt="Logo 2" /></SwiperSlide>
+        <SwiperSlide><img className='logo-image' src="/images/panconmadrelogo.png" alt="Logo 3" /></SwiperSlide>
+        <SwiperSlide><img className='logo-image' src="/images/panconmadrelogo.png" alt="Logo 4" /></SwiperSlide>
+        <SwiperSlide><img className='logo-image' src="/images/panconmadrelogo.png" alt="Logo 5" /></SwiperSlide>
+        <SwiperSlide><img className='logo-image' src="/images/panconmadrelogo.png" alt="Logo 6" /></SwiperSlide>
+      </Swiper>
+    </section>
 
-      <section id="features" className="features">
-        <h2>Why Choose Polenia?</h2>
-        <ul>
-          <li>100% Natural Ingredients</li>
-          <li>Eco-Friendly Packaging</li>
-          <li>Locally Sourced Ginger</li>
-          <li>Perfect for Cocktails and Mocktails</li>
-        </ul>
-      </section>
-
-      <footer id="contact" className="footer">
-        <p>&copy; 2025 Polenia Ginger Beer</p>
-        <p>Follow us: 
-          <a href="https://www.instagram.com/poleniagingerbeer" target="_blank" rel="noopener noreferrer">Instagram</a> | 
-          <a href="https://www.facebook.com/poleniagingerbeer" target="_blank" rel="noopener noreferrer">Facebook</a>
-        </p>
-      </footer>
     </div>
   );
 };

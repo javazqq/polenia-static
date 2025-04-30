@@ -1,0 +1,32 @@
+.navbar{
+    background-color: #f4d35e;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+/* Ensure sticky-top sticks and stays above other elements */
+.sticky-top {
+    z-index: 1050 !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  /* Optional: smooth transition on collapse */
+  .navbar-collapse {
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Style for nav links */
+  .nav-link {
+    margin-left: 1rem;
+    font-weight: 500;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .nav-link:hover {
+    color: #f4d35e; /* a warm highlight color for hover */
+  }
+  
+  .nav{
+    color: yellowgreen
+  }
