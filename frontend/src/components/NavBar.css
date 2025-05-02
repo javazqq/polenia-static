@@ -1,8 +1,12 @@
 .navbar{
-    background-color: #f4d35e;
+    background-color: #ee8b19;
     position: fixed;
     width: 100%;
     top: 0;
+}
+
+.navbar-brand{
+    font-size:xx-large;
 }
 
 /* Ensure sticky-top sticks and stays above other elements */

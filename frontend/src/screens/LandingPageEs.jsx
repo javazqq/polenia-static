@@ -5,10 +5,10 @@ import { Autoplay, Pagination } from 'swiper/modules';
 import { GiHerbsBundle, GiMartini } from 'react-icons/gi';
 import { BsRecycle } from 'react-icons/bs';
 import { FaHandsHelping } from 'react-icons/fa';
-import './LandingPage.css';
+import './LandingPageEs.css';
 
 
-const LandingPage = () => {
+const LandingPageEs = () => {
   return (
     <div className="landing-page">
       <section className="hero d-flex align-items-center text-center">
@@ -118,5 +118,3 @@ const LandingPage = () => {
     </div>
   );
 };
-
-export default LandingPage;
