@@ -1,8 +1,34 @@
 import { Navbar, Nav, Container } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./NavBar.css";
 
 const NavBar = () => {
+
+  const location = useLocation();
+  const isSpanish = location.pathname.startsWith("/es");
+
+  const poleniaToggle = () => {
+    let poleniaPath = location.pathname;
+    if (isSpanish) {
+      poleniaPath = "/es";
+    } else {
+      poleniaPath = "/";
+    }
+    return poleniaPath;
+
+  }
+
+  const toggleLangPath = () => {
+    let newPath = location.pathname;
+    if (isSpanish) {
+      newPath = newPath.slice(3) || "/";
+    } else {
+      newPath = "/es";
+    }
+
+    return newPath;
+  };
+
   return (
     <header>
       <Navbar expand="lg" sticky="top" collapseOnSelect>
@@ -15,7 +41,7 @@ const NavBar = () => {
           {/* Center: brand */}
           <Navbar.Brand
             as={Link}
-            to="/"
+            to={poleniaToggle()}
             className="mx-auto position-absolute start-50 translate-middle-x"
           >
             Polenia
@@ -23,14 +49,8 @@ const NavBar = () => {
 
           {/* Right side: nav links */}
           <Nav className="flex-fill justify-content-end">
-          <Nav.Link as={Link} to="/es">
-              Español
-            </Nav.Link>
-            <Nav.Link as={Link} to="/about">
-              About
-            </Nav.Link>
-            <Nav.Link as={Link} to="/contact">
-              Contact
+            <Nav.Link as={Link} to={toggleLangPath()}>
+              {isSpanish ? "English" : "Español"}
             </Nav.Link>
           </Nav>
         </Container>

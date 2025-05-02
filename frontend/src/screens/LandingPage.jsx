@@ -17,10 +17,27 @@ const LandingPage = () => {
             <Col md={10} lg={8}>
               <h1 className="display-4 fw-bold">Refresh Your Senses</h1>
               <p className="lead">Polenia Ginger Beer – Crafted from agroecological ginger, packed with natural flavor.</p>
-              <Button variant="success" size="lg" className="mt-3 cta-btn">Know More</Button>
+              <Button variant="success" size="lg" className="mt-3 hero-cta-btn" href="#about">Know More →</Button>
             </Col>
           </Row>
         </Container>
+
+        <div>
+<svg className="waves" xmlns="http://www.w3.org/2000/svg"
+viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+<defs>
+<path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+</defs>
+<g className="parallax">
+<use href="#gentle-wave" x="48" y="0" fill="rgba(255, 183, 77, 0.7)" />  
+<use href="#gentle-wave" x="48" y="3" fill="rgba(255, 138, 128, 0.5)" />  
+<use href="#gentle-wave" x="48" y="5" fill="rgba(244, 143, 177, 0.5)" />  
+<use href="#gentle-wave" x="48" y="7" fill="rgba(206, 147, 216, 0.4)" /> 
+
+</g>
+</svg>
+</div>
+        
       </section>
       
 
@@ -55,7 +72,7 @@ const LandingPage = () => {
 
       <section id="about" className="about py-5 bg-light text-center">
         <Container>
-          <h2 className="mb-4">About Polenia</h2>
+          <h2 className="mb-4 py-5">About Polenia</h2>
           <p className="lead">Handcrafted with organic ginger and bottled sustainably, Polenia is more than a beverage – it's a commitment to flavor, health, and the planet.</p>
         </Container>
       </section>

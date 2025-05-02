@@ -14,11 +14,13 @@ import 'swiper/css/pagination';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import LandingPage from './screens/LandingPage';
+import LandingPageEs from './screens/LandingPageEs';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route index={true} path='/' element={<LandingPage />} />
+      <Route index={true} path='/es' element={<LandingPageEs />} />
     </Route>
   )
 )
