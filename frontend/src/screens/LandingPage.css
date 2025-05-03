@@ -17,8 +17,8 @@
 }
 
 .hero h1 {
-  color: white;  /* Light color for the heading */
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Adds depth to the text */
+  color: black; /* Light color for the heading */
+  text-shadow: none; /* Adds depth to the text */
 }
 
 .hero p {
@@ -40,6 +40,49 @@
   text-decoration: none;
 }
 
+/* Slide Animation */
+
+.slide-horizontal {
+  .char {
+    overflow: hidden;
+    color: transparent;
+
+    &:before,
+    &:after {
+      visibility: visible;
+      color: #fff;
+      transition: transform 0.5s cubic-bezier(0.9, 0, 0.2, 1);
+      transition-delay: calc(0.2s + (0.02s * (var(--char-index))));
+    }
+
+    &:before {
+      color: #00c9b1;
+      transition-delay: calc(0.02s * (var(--char-index)));
+    }
+  }
+
+  &:hover .char:before {
+    transition-delay: calc(0.2s + (0.02s * (var(--char-index))));
+  }
+  &:hover .char:after {
+    transition-delay: calc(0.02s * (var(--char-index)));
+  }
+}
+
+.slide-horizontal {
+  .char:before {
+    transform: translateX(110%);
+  }
+  &:hover .char:before {
+    transform: translateX(0%);
+  }
+  &:hover .char:after {
+    transform: translateX(-110%);
+  }
+}
+
+/* Call to action section */
+
 .cta-btn {
   font-weight: bold;
   border-radius: 50px;
@@ -49,7 +92,7 @@
   background: #f9f9f9;
   border-radius: 12px;
   padding: 1.5rem;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
 .cta-uno-section {
@@ -108,7 +151,7 @@
   left: 0;
   height: 100%;
   width: 100%;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0, 0, 0, 0.4);
   color: white;
   display: flex;
   align-items: center;
@@ -134,7 +177,7 @@
 }
 
 .logo-image {
-  width: 80%;  /* Adjust this to change the size */
+  width: 80%; /* Adjust this to change the size */
   height: auto; /* Maintain aspect ratio */
   object-fit: contain; /* Ensure logos don't get stretched */
 }
@@ -154,7 +197,7 @@
 
 /* Parallax Animation */
 .parallax > use {
-  animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
 }
 
 .parallax > use:nth-child(1) {

@@ -1,4 +1,4 @@
-.landing-page .hero {
+.landing-page .hero-es {
   min-height: 100vh;
   color: yellowgreen;
   display: flex;
@@ -9,24 +9,24 @@
   overflow: hidden; /* Ensures waves don't overflow outside of the hero section */
 }
 
-.hero {
+.hero-es {
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   padding: 5rem 0;
   background: linear-gradient(135deg, #ffe0b2, #f8bbd0, #e1bee7);
 }
 
-.hero h1 {
-  color: white;  /* Light color for the heading */
+.hero-es h1 {
+  color: white; /* Light color for the heading */
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Adds depth to the text */
 }
 
-.hero p {
+.hero-es p {
   color: #f8f8f8; /* Slightly off-white for the paragraph */
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for readability */
 }
 
-.hero-cta-btn {
+.hero-es-cta-btn {
   background: linear-gradient(90deg, #ff8a65, #f06292);
   color: white;
   border: none;
@@ -49,7 +49,7 @@
   background: #f9f9f9;
   border-radius: 12px;
   padding: 1.5rem;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
 .cta-uno-section {
@@ -108,7 +108,7 @@
   left: 0;
   height: 100%;
   width: 100%;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0, 0, 0, 0.4);
   color: white;
   display: flex;
   align-items: center;
@@ -134,7 +134,7 @@
 }
 
 .logo-image {
-  width: 80%;  /* Adjust this to change the size */
+  width: 80%; /* Adjust this to change the size */
   height: auto; /* Maintain aspect ratio */
   object-fit: contain; /* Ensure logos don't get stretched */
 }
@@ -154,7 +154,7 @@
 
 /* Parallax Animation */
 .parallax > use {
-  animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
 }
 
 .parallax > use:nth-child(1) {
