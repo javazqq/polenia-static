@@ -32,29 +32,27 @@ const NavBar = () => {
   return (
     <header>
       <Navbar expand="lg" sticky="top" collapseOnSelect>
-        <Container className="d-flex justify-content-between align-items-center">
-          {/* Left side: empty nav (or put links later) */}
-          <Nav className="flex-fill justify-content-start">
-            {/* Optional: <Nav.Link as={Link} to="/home">Home</Nav.Link> */}
-          </Nav>
+  <Container className="d-flex justify-content-between align-items-center">
+    {/* Left side: invisible spacer to balance the right link */}
+    <Nav className="flex-fill justify-content-start">
+      <span className="d-none d-lg-block" style={{ width: '75px' }}></span>
+    </Nav>
 
-          {/* Center: brand */}
-          <Navbar.Brand
-            as={Link}
-            to={poleniaToggle()}
-            className="mx-auto position-absolute start-50 translate-middle-x"
-          >
-            Polenia
-          </Navbar.Brand>
+    {/* Center: brand */}
+    <Navbar.Brand as={Link} to={poleniaToggle()} className="mx-auto">
+      Polenia
+    </Navbar.Brand>
 
-          {/* Right side: nav links */}
-          <Nav className="flex-fill justify-content-end">
-            <Nav.Link as={Link} to={toggleLangPath()}>
-              {isSpanish ? "English" : "Español"}
-            </Nav.Link>
-          </Nav>
-        </Container>
-      </Navbar>
+    {/* Right side: language link */}
+    <Nav className="flex-fill justify-content-end lang-btn">
+      <Nav.Link as={Link} to={toggleLangPath()}>
+        {isSpanish ? "EN" : "ES"}
+      </Nav.Link>
+    </Nav>
+  </Container>
+</Navbar>
+
+
     </header>
   );
 };

@@ -17,8 +17,8 @@
 }
 
 .hero-es h1 {
-  color: white; /* Light color for the heading */
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Adds depth to the text */
+  color: black; /* Light color for the heading */
+  text-shadow: none; /* Adds depth to the text */
 }
 
 .hero-es p {
@@ -39,6 +39,51 @@
   display: inline-block;
   text-decoration: none;
 }
+
+
+/* Slide Animation */
+
+.slide-horizontal-es {
+  .char {
+    overflow: hidden;
+    color: transparent;
+
+    &:before,
+    &:after {
+      visibility: visible;
+      color: #fff;
+      transition: transform 0.5s cubic-bezier(0.9, 0, 0.2, 1);
+      transition-delay: calc(0.2s + (0.02s * (var(--char-index))));
+    }
+
+    &:before {
+      color: #00c9b1;
+      transition-delay: calc(0.02s * (var(--char-index)));
+    }
+  }
+
+  &:hover .char:before {
+    transition-delay: calc(0.2s + (0.02s * (var(--char-index))));
+  }
+  &:hover .char:after {
+    transition-delay: calc(0.02s * (var(--char-index)));
+  }
+}
+
+.slide-horizontal-es {
+  .char:before {
+    transform: translateX(110%);
+  }
+  &:hover .char:before {
+    transform: translateX(0%);
+  }
+  &:hover .char:after {
+    transform: translateX(-110%);
+  }
+}
+
+/* Call to action section */
+
 
 .cta-btn {
   font-weight: bold;

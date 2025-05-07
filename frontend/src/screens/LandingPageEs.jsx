@@ -1,20 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import { GiHerbsBundle, GiMartini } from "react-icons/gi";
 import { BsRecycle } from "react-icons/bs";
 import { FaHandsHelping } from "react-icons/fa";
+import Splitting from "splitting";
+import "splitting/dist/splitting.css";
 import "./LandingPageEs.css";
 
+
 const LandingPageEs = () => {
+  useEffect(() => {
+    Splitting();
+  }, []);
+
   return (
     <div className="landing-page">
       <section className="hero-es d-flex align-items-center text-center">
         <Container>
           <Row className="justify-content-center">
             <Col md={10} lg={8}>
-              <h1 className="display-4 fw-bold">Refresca tus sentidos</h1>
+              <h1 className="display-4 fw-bold slide-horizontal" data-splitting>
+                Refresca tus sentidos</h1>
               <p className="lead">
                 Polenia Ginger Beer – Elaborada con jengibre agroecológico,
                 llena de sabor natural.
